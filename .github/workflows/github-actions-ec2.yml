@@ -22,3 +22,12 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
+      
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.EC2_SSH_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.HOST_DNS }}
+      - name: ssh
+        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }}
