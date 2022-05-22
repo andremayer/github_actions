@@ -38,7 +38,7 @@ public class ArithmeticOperationsResource {
 		return ResponseEntity.badRequest().build();
 	}
 
-	/**
+	
 	@PostMapping("/subtract")
 	public ResponseEntity<ResultDTO> subtract(@RequestBody OperandDTO operandDTO) {
 		if (operandDTO != null) {
@@ -47,7 +47,7 @@ public class ArithmeticOperationsResource {
 		}
 		return ResponseEntity.badRequest().build();
 	}
-	*/
+	
 
 	@ExceptionHandler({ ArithmeticException.class, OperandException.class })
 	public ResponseEntity<String> handleException(final RuntimeException exception) {
