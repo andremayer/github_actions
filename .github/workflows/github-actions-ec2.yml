@@ -33,5 +33,5 @@ jobs:
         run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} mvn clean install -f calculator
         
       - name: ssh to run microservice
-        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} mvn spring-boot:run -f calculator
+        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} mvn spring-boot:run -f calculator &
 
