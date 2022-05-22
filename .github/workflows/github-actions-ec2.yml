@@ -29,5 +29,9 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           name: id_rsa
           known_hosts: ${{ secrets.HOST_DNS }}
-      - name: ssh
+      - name: ssh to Maven clean and install
         run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} mvn clean install -f calculator
+        
+      - name: ssh to run microservice
+        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} mvn spring-boot:run -f calculator
+
