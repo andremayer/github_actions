@@ -30,4 +30,4 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.HOST_DNS }}
       - name: ssh
-        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} whoami
+        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} mvn clean install -f /calculator/pom.xml
