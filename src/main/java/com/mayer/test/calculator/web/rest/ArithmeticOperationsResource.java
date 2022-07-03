@@ -28,7 +28,7 @@ public class ArithmeticOperationsResource {
 		this.arithmeticOperationsService = arithmeticOperationsService;
 	}
 
-	@PostMapping("/add")
+	@PostMapping("/addBrunelo")
 	public ResponseEntity<ResultDTO> add(@RequestBody OperandDTO operandDTO) {
 		log.debug("REST request to perform the add operation : {}", operandDTO);
 		if (operandDTO != null) {
